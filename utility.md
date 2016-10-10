@@ -1,4 +1,4 @@
-#Utilty file
+#Utility file
 
 This file contains several classes and methods that may be of use.
 
