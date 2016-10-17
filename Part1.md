@@ -95,3 +95,8 @@ You can now `show` the `stage` to display it:
 ```java
 stage.show();
 ```
+For now, the `start` method is complete. Later, you will add set-up code for keyboard input and the frame loop to this method. For now, run the application in Eclipse to make sure that it displays a window with the title you specified. You can try adding drawing code to the `start` method to draw text on the canvas:
+```java
+context.setFill(Color.BLACK);
+context.fillText("Hello, world!, 200, 200);
+```
