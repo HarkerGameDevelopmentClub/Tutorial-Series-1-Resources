@@ -5,4 +5,6 @@ This GitHub repository has tutorial documents that will guide you through each l
 
 Useful links include the [Utility Methods file](utility.md) and [Oracle's official JavaFX API Reference](http://docs.oracle.com/javase/8/javafx/api/toc.htm). Refer to these if you are ever confused about which methods to call.
 
-Start the tutorial series with [Part 1!](https://github.com/HarkerGameDevelopmentClub/Tutorial-Series-1-Resources/blob/master/Part1.md)
+Start the tutorial series with [Part 1](Part1.md), which discusses the creation of a starter file with a frame loop, JavaFX integration, and keyboard input.
+
+In [Part 2](Part2.md), you will start creating classes for the player, enemies, and terrain.
