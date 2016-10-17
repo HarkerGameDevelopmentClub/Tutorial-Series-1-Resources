@@ -99,6 +99,7 @@ For now, the `start` method is complete. Later, you will add set-up code for key
 context.setFill(Color.BLACK);
 context.fillText("Hello, world!, 200, 200);
 ```
+Congratulations! You've created a working JavaFX project!
 
 ## The frame loop
 You will now learn how to add a frame loop to the Main class. The frame loop is an essential component of any game. It manages the process of updating the game state and re-drawing the entire game every frame, 60 times a second.
@@ -144,3 +145,13 @@ timer.start();
 This is a very fascinating piece of code. Essentially, you have defined an entirely new subclass of `AnimationTimer` that, when prompted to handle a new frame, calls its enclosing class (i.e. the Main class)'s `nextFrame()` method. You have then assigned this timer to the instance variable created earlier in this part and started it.
 
 Now, if you run the project, it should display the current frame.
+Another bold step forward! The last thing that you will write in this part is keyboard input functionality.
+
+## Keyboard input
+Keyboard input is fairly complicated. It follows the JavaFX event handling model: a class which is a designated `EventHandle`r receives and `Event` and processes it.
+
+In this case, you will make the `Main` class the `EventHandler` for `KeyEvent`s. First, add the following to the `Main` class signature, after `extends Application`:
+```java
+implements EventHandler<KeyEvent>
+```
+To make `Main` comply with the requirements of this interface, create a new method, `public void handle(KeyEvent event)`.
