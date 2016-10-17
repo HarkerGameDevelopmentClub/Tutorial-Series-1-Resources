@@ -110,19 +110,37 @@ public void nextFrame() {
 }
 ```
 The `nextFrame()` method just calls two other methods, one to update the game data (e.g. change the position of a moving character) and the other to draw the frame based on the newly updated game state.
-You will now create these two methods with dummy implementations:
+You will now create these two methods. The `updateGameState()` method will update the `frameNumber`, while the `renderFrame()` method will clear the canvas at the start of each frame.
 ```java
-	public void updateGameState() {
-		frameNumber++;
-	}
+public void updateGameState() {
+	frameNumber++;
+}
 	
-	public void renderFrame() {
-		context.clearRect(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
-		context.setFill(Color.BLACK);
-		context.fillText(
-				"Hello, frame " + frameNumber,
-				WINDOW_WIDTH / 2,
-				WINDOW_HEIGHT / 2
-				);
-	}
+public void renderFrame() {
+	context.clearRect(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
+}
 ```
+You can also add the following to the `renderFrame()` method to make sure that it is working properly:
+```java
+context.fillText(
+	"Hello, frame " + frameNumber,
+	WINDOW_WIDTH / 2,
+	WINDOW_HEIGHT / 2
+	);
+}
+```
+Now that you have the frame loop methods, they need to be called every frame. To do this, you can use the `AnimationTimer` class.
+
+Add the following code to the `start` method:
+```java
+timer = new AnimationTimer() {
+	@Override
+	public void handle(long now) {
+		nextFrame();
+	}	
+};
+timer.start();
+```
+This is a very fascinating piece of code. Essentially, you have defined an entirely new subclass of `AnimationTimer` that, when prompted to handle a new frame, calls its enclosing class (i.e. the Main class)'s `nextFrame()` method. You have then assigned this timer to the instance variable created earlier in this part and started it.
+
+Now, if you run the project, it should display the current frame.
