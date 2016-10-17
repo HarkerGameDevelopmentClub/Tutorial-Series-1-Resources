@@ -3,4 +3,6 @@ This series will teach you how to set up a JavaFX game with a basic starter file
 
 This GitHub repository has tutorial documents that will guide you through each lab in this tutorial series, as well as art, code, and music assets.
 
+Useful links include the [Utility Methods file](utility.md) and [Oracle's official JavaFX API Reference](http://docs.oracle.com/javase/8/javafx/api/toc.htm). Refer to these if you are ever confused about which methods to call.
+
 Start with [Part 1](https://github.com/HarkerGameDevelopmentClub/Tutorial-Series-1-Resources/blob/master/Part1.md)
