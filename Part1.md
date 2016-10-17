@@ -18,10 +18,9 @@ The Main class that you will create in this part will do all of the interfacing 
 
 If you don't want to set up this class yourself, you can add [this starter file](Main.java) to your project and skip straight to part 2 of the tutorial series. Otherwise, read on.
 
-### Creating the class
 To create the new class, go to File ▸ New ▸ Class and name it Main. Have Main extend the Application class (javafx.application.Application). This is the main JavaFX class. It has methods for displaying a new window and setting up all of the JavaFX classes within the window.
 
-### Main method
+## Main method
 The static method that the Application class uses to create a new Main object with its own window is called `launch(String[] args)`. But the static method that Eclipse uses to run your class is called `public static void main(String[] args)`. To link these two together, so that you can use Eclipse to run your JavaFX project directly, add the following method to your Main class:
 
 ```java
@@ -31,7 +30,7 @@ public static void Main(String[] args)
 }
 ```
 
-### Importing JavaFX classes
+## Importing JavaFX classes
 If you use a JavaFX class that you haven't imported, Eclipse will ask you what to import. In some cases, it will present classes that have the same name but are not from JavaFX. If this happens, find the `javafx.` class and import that.
 
 To avoid this import process for this part, you can import all of the classes that will be used directly:
@@ -49,7 +48,7 @@ import javafx.stage.Stage;
 import javafx.event.EventType;
 ```
 
-### Variables
+## Variables
 The following variables will be used in the Main class. They are provided here to simplify the writing of the remainder of the class.
 ```java
 private Canvas canvas;
@@ -68,7 +67,7 @@ The above, if called every frame, would only perform `doSomething()` about once 
 
 The static variables `WINDOW_WIDTH` and `WINDOW_HEIGHT` will be used in the window configuration in the `start(Stage stage)` method, which you will create next.
 
-### The `start` method
+## The `start` method
 This is the last method you will need to write before your class compiles and runs correctly. The method signature is
 ```java
 @Override
@@ -99,4 +98,31 @@ For now, the `start` method is complete. Later, you will add set-up code for key
 ```java
 context.setFill(Color.BLACK);
 context.fillText("Hello, world!, 200, 200);
+```
+
+## The frame loop
+You will now learn how to add a frame loop to the Main class. The frame loop is an essential component of any game. It manages the process of updating the game state and re-drawing the entire game every frame, 60 times a second.
+The first method that you will create is the `nextFrame()` method, which will be called every frame:
+```java
+public void nextFrame() {
+	updateGameState();
+	renderFrame();
+}
+```
+The `nextFrame()` method just calls two other methods, one to update the game data (e.g. change the position of a moving character) and the other to draw the frame based on the newly updated game state.
+You will now create these two methods with dummy implementations:
+```java
+	public void updateGameState() {
+		frameNumber++;
+	}
+	
+	public void renderFrame() {
+		context.clearRect(0, 0, WINDOW_WIDTH, WINDOW_HEIGHT);
+		context.setFill(Color.BLACK);
+		context.fillText(
+				"Hello, frame " + frameNumber,
+				WINDOW_WIDTH / 2,
+				WINDOW_HEIGHT / 2
+				);
+	}
 ```
