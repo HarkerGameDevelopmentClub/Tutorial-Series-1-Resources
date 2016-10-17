@@ -27,7 +27,7 @@ public class Main extends Application implements EventHandler<KeyEvent> {
 	}
 
 	@Override
-	public void start(Stage primaryStage) {
+	public void start(Stage stage) {
 		canvas = new Canvas(WINDOW_WIDTH, WINDOW_HEIGHT);
 		context = canvas.getGraphicsContext2D();
 		
@@ -43,9 +43,9 @@ public class Main extends Application implements EventHandler<KeyEvent> {
 		scene.setOnKeyPressed(this);
 		scene.setOnKeyReleased(this);
 		
-		primaryStage.setScene(scene);
-		primaryStage.setResizable(false);
-		primaryStage.show();
+		stage.setScene(scene);
+		stage.setResizable(false);
+		stage.show();
 	}
 	
 	public void nextFrame() {
