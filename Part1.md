@@ -101,6 +101,8 @@ context.fillText("Hello, world!, 200, 200);
 ```
 Congratulations! You've created a working JavaFX project!
 
+For the remainder of this part, you will be dealing with more game architecting, not just JavaFX library calls. Make sure that you understand the ideas behind the frame loop and the keyboard input handling system.
+
 ## The frame loop
 You will now learn how to add a frame loop to the Main class. The frame loop is an essential component of any game. It manages the process of updating the game state and re-drawing the entire game every frame, 60 times a second.
 The first method that you will create is the `nextFrame()` method, which will be called every frame:
@@ -155,3 +157,44 @@ In this case, you will make the `Main` class the `EventHandler` for `KeyEvent`s.
 implements EventHandler<KeyEvent>
 ```
 To make `Main` comply with the requirements of this interface, create a new method, `public void handle(KeyEvent event)`.
+
+This method will eventually receive both events for a key being pressed and events for a key being released. To distinguish between the two, use the `event.getEventType()`. It will either have the value of `KeyEvent.KEY_PRESSED` or `KeyEvent.KEY_RELEASED`.
+
+You can retrive which key was pressed with `event.getCode().toString()`. Note that for some keys, like "A" and "a", the string value is the same as the actual key. But for some, like numbers, it's unusual: "DIGIT8" is provided for the number "8". When in doubt, log the value of the pressed key to the console.
+
+In any case, to simplify key event handling, you could use two separate methods, `keyPressed(String key)` and `keyReleased(String key)`, and have `handle(KeyEvent event)` call one of them, depending on the kind of key event it was passed. A sample implementation of these three methods is provided below.
+```java
+@Override
+public void handle(KeyEvent event) {
+	EventType<KeyEvent> eventType = event.getEventType();
+	String key = event.getCode().toString();
+	if (eventType == KeyEvent.KEY_PRESSED) {
+		keyPressed(key);
+	}
+	else if (eventType == KeyEvent.KEY_RELEASED) {
+		keyReleased(key);
+	}
+}
+
+public void keyPressed(String key) {
+	System.out.println(key + " pressed");
+}
+
+public void keyReleased(String key) {
+	System.out.println(key + " released");
+}
+```
+The implementations of `keyPressed` and `keyReleased` here are dummy implementations that print out the value of the key being pressed or released.
+
+If you ran the project now . . . nothing would happen. The `Main` class needs to be assigned to receive key events. Add the following code to the `start` method:
+```java
+scene.setOnKeyPressed(this);
+scene.setOnKeyReleased(this);
+```
+
+*Now* when you run the project, it should respond to keyboard input.
+
+That's it! You've completed Part 1 of the platformer tutorial, and you've created a Main class that can be used to create any kind of game.
+
+## Next steps
+Try [Part 2](
