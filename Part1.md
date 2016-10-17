@@ -18,8 +18,10 @@ The Main class that you will create in this part will do all of the interfacing 
 
 If you don't want to set up this class yourself, you can add [this starter file](Main.java) to your project and skip straight to part 2 of the tutorial series. Otherwise, read on.
 
+### Creating the class
 To create the new class, go to File ▸ New ▸ Class and name it Main. Have Main extend the Application class (javafx.application.Application). This is the main JavaFX class. It has methods for displaying a new window and setting up all of the JavaFX classes within the window.
 
+### Main method
 The static method that the Application class uses to create a new Main object with its own window is called `launch(String[] args)`. But the static method that Eclipse uses to run your class is called `public static void main(String[] args)`. To link these two together, so that you can use Eclipse to run your JavaFX project directly, add the following method to your Main class:
 
 ```java
@@ -27,3 +29,22 @@ public static void Main(String[] args)
 {
   launch(args);
 }
+```
+
+### Imports and variables
+Now we're going to add a bunch of imports to make sure we can use all of the classes we will need. If you ever use a JavaFX class that you haven't imported, Eclipse will ask you what to import. Make sure that in those cases you choose the `javafx.something` version of the class so that you aren't importing from, say, `java.awt`. For this part, we will just import everything upfront so that we don't have to deal with that.
+So add the following statements before your class declaration in Main.java:
+```java
+import javafx.animation.AnimationTimer;
+import javafx.application.Application;
+import javafx.event.EventHandler;
+import javafx.scene.Group;
+import javafx.scene.Scene;
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.input.KeyEvent;
+import javafx.scene.paint.Color;
+import javafx.stage.Stage;
+import javafx.event.EventType;
+```
+Now
