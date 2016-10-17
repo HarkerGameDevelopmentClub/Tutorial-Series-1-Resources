@@ -5,4 +5,4 @@ This GitHub repository has tutorial documents that will guide you through each l
 
 Useful links include the [Utility Methods file](utility.md) and [Oracle's official JavaFX API Reference](http://docs.oracle.com/javase/8/javafx/api/toc.htm). Refer to these if you are ever confused about which methods to call.
 
-Start with [Part 1](https://github.com/HarkerGameDevelopmentClub/Tutorial-Series-1-Resources/blob/master/Part1.md)
+Start the tutorial series with [Part 1!](https://github.com/HarkerGameDevelopmentClub/Tutorial-Series-1-Resources/blob/master/Part1.md)
