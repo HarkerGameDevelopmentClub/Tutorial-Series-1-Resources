@@ -31,9 +31,10 @@ public static void Main(String[] args)
 }
 ```
 
-### Imports and variables
-Now we're going to add a bunch of imports to make sure we can use all of the classes we will need. If you ever use a JavaFX class that you haven't imported, Eclipse will ask you what to import. Make sure that in those cases you choose the `javafx.something` version of the class so that you aren't importing from, say, `java.awt`. For this part, we will just import everything upfront so that we don't have to deal with that.
-So add the following statements before your class declaration in Main.java:
+### Importing JavaFX classes
+If you use a JavaFX class that you haven't imported, Eclipse will ask you what to import. In some cases, it will present classes that have the same name but are not from JavaFX. If this happens, find the `javafx.` class and import that.
+
+To avoid this import process for this part, you can import all of the classes that will be used directly:
 ```java
 import javafx.animation.AnimationTimer;
 import javafx.application.Application;
@@ -47,4 +48,16 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.event.EventType;
 ```
-Now
+
+### Variables
+The following variables will be used in the Main class. They are provided here to simplify the writing of the remainder of the class.
+```java
+private Canvas canvas;
+private GraphicsContext context;
+private AnimationTimer timer;
+private int frameNumber = 0;
+
+private static int WINDOW_WIDTH = 800;
+private static int WINDOW_HEIGHT = 600;
+```
+`canvas` is the JavaFX canvas on which each frame is drawn. Actual drawing calls are made to the `context` object, which has methods like 
