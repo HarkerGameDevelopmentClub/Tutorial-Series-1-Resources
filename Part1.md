@@ -69,3 +69,18 @@ The above, if called every frame, would only perform `doSomething()` about once 
 The static variables `WINDOW_WIDTH` and `WINDOW_HEIGHT` will be used in the window configuration in the `start(Stage stage)` method, which you will create next.
 
 ### The `start` method
+This is the last method you will need to write before your class compiles and runs correctly. The method signature is
+```java
+@Override
+public void Start(Stage stage)
+```
+`stage` is the class that manages the window of the application. You can change the title of the `stage` and prevent users from resizing it (I don't think that the canvas will resize with the stage either way, so it's best to keep the stage size immutable).
+```java
+stage.setTitle("platformer");
+stage.setResizable(false);
+```
+In the `start` method, you will assign the `canvas` object to a new `Canvas` that has the dimensions you specified in static variables. Then you will assign the `context` object to the `GraphicsContext` of the canvas.
+```java
+canvas = new Canvas(WINDOW_WIDTH, WINDOW_HEIGHT);
+context = canvas.getGraphicsContext2D();
+```
