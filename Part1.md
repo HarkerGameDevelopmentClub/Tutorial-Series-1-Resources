@@ -1,4 +1,4 @@
-# Part 1. Creating the project and JavaFX manager class.
+# Part 1. Creating the project, the Main class, the frame loop, and keyboard input
 
 ## Creating the project in Eclipse that works with JavaFX
 You will need the Eclipse IDE which can be found at [eclipse.org](http://eclipse.org).
