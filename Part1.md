@@ -84,3 +84,14 @@ In the `start` method, you will assign the `canvas` object to a new `Canvas` tha
 canvas = new Canvas(WINDOW_WIDTH, WINDOW_HEIGHT);
 context = canvas.getGraphicsContext2D();
 ```
+The `canvas` needs to be assigned to the `stage`, but the `stage` will only take a `Scene`.
+As in an actual theater, the `Scene` controls what `Group` of objects are currently on the `stage`. It could contain buttons and other JavaFX UI elements, but in games, all that is necessary is the `canvas`.
+With that in mind, create a new `Scene` with the `canvas` and assign it to the `stage`:
+```java
+Scene scene = new Scene(new Group(canvas));
+stage.setScene(scene);
+```
+You can now `show` the `stage` to display it:
+```java
+stage.show();
+```
