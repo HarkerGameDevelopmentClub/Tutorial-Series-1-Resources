@@ -60,4 +60,12 @@ private int frameNumber = 0;
 private static int WINDOW_WIDTH = 800;
 private static int WINDOW_HEIGHT = 600;
 ```
-`canvas` is the JavaFX canvas on which each frame is drawn. Actual drawing calls are made to the `context` object, which has methods like 
+`canvas` is the JavaFX canvas on which each frame is drawn. Actual drawing calls are made to the `context` object, which has methods like `drawImage(x, y, width, height)`. The `timer` object will periodically tell the Main class to draw a new frame, and the `frameNumber` can be used to set periodic events to occur in the following fashion:
+```java
+if (frameNumber % 600 == 0) {doSomething();}
+```
+The above, if called every frame, would only perform `doSomething()` about once every 10 seconds (assuming 60 frames per second).
+
+The static variables `WINDOW_WIDTH` and `WINDOW_HEIGHT` will be used in the window configuration in the `start(Stage stage)` method, which you will create next.
+
+### The `start` method
