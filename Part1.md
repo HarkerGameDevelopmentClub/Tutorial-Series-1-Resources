@@ -16,7 +16,7 @@ You should now be able to use JavaFX in the Eclipse project.
 ## Creating the Main class
 The Main class that you will create in this part will do all of the interfacing with JavaFX necessary to create a window, run a frame loop, and respond to keyboard input. Once you create this class, you can use it as the foundation for any JavaFX game you make.
 
-If you don't want to set up this class yourself, you can add [this starter file](Main.java) to your project and skip straight to part 2 of the tutorial series. Otherwise, read on.
+If you don't want to set up this class yourself, you can add [this starter file](Main.java) to your project and skip straight to [Part 2](Part2.md) of the tutorial series. Otherwise, read on.
 
 To create the new class, go to File ▸ New ▸ Class and name it Main. Have Main extend the Application class (javafx.application.Application). This is the main JavaFX class. It has methods for displaying a new window and setting up all of the JavaFX classes within the window.
 
@@ -150,7 +150,7 @@ Now, if you run the project, it should display the current frame.
 Another bold step forward! The last thing that you will write in this part is keyboard input functionality.
 
 ## Keyboard input
-Keyboard input is fairly complicated. It follows the JavaFX event handling model: a class which is a designated `EventHandle`r receives and `Event` and processes it.
+Keyboard input is fairly complicated. It follows the JavaFX event handling model: a class which is a designated `EventHandler` receives an `Event` and processes it.
 
 In this case, you will make the `Main` class the `EventHandler` for `KeyEvent`s. First, add the following to the `Main` class signature, after `extends Application`:
 ```java
@@ -197,4 +197,6 @@ scene.setOnKeyReleased(this);
 That's it! You've completed Part 1 of the platformer tutorial, and you've created a Main class that can be used to create any kind of game.
 
 ## Next steps
-Try [Part 2](
+Continue building the platformer game with [Part 2](Part2.md) of the tutorial series.
+
+Try adding mouse input to the main class or a separate MouseEventHandler class that you create. Use the [JavaFX documentation](http://docs.oracle.com/javase/8/javafx/api/toc.htm), particularly for the `Scene` class (which has methods to set the mouse listener), `EventHandler<T>` interface (which your mouse listener will need to conform to), and the `MouseEvent` which the mouse listener will receive.
