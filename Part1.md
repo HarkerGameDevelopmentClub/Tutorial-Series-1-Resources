@@ -192,7 +192,7 @@ scene.setOnKeyPressed(this);
 scene.setOnKeyReleased(this);
 ```
 
-*Now* when you run the project, it should respond to keyboard input.
+*Now* when you run the project, it should respond to keyboard input. The `scene` is now sending the keyboard events that it receives to the `Main` class.
 
 That's it! You've completed Part 1 of the platformer tutorial, and you've created a Main class that can be used to create any kind of game.
 
