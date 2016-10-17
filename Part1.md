@@ -16,4 +16,4 @@ You should now be able to use JavaFX in the Eclipse project.
 ## Creating the Main class
 The Main class that you will create in this part will do all of the interfacing with JavaFX necessary to create a window, run a frame loop, and respond to keyboard input. Once you create this class, you can use it as the foundation for any JavaFX game you make.
 
-If you don't want to set up this class yourself, you can add [this starter file](Tutorial-Series-1-Resources/Main.java) to your project and skip straight to part 2 of the tutorial series.
+If you don't want to set up this class yourself, you can add [this starter file](Main.java) to your project and skip straight to part 2 of the tutorial series.
