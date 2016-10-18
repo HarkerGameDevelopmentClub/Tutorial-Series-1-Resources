@@ -150,7 +150,7 @@ Now, if you run the project, it should display the current frame.
 Another bold step forward! The last thing that you will write in this part is keyboard input functionality.
 
 ## Keyboard input
-Keyboard input is fairly complicated. It follows the JavaFX event handling model: a class which is a designated `EventHandler` receives an `Event` and processes it.
+Keyboard input follows the JavaFX event handling model: a class which is a designated `EventHandler` receives an `Event` and processes it.
 
 In this case, you will make the `Main` class the `EventHandler` for `KeyEvent`s. First, add the following to the `Main` class signature, after `extends Application`:
 ```java
